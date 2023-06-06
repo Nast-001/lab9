@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script >
+        var removeElements = function(head, val){
+            let p = new ListNode(-1);
+            p.next = head;
+            let prev = p;
+            let cur = head;
+            // Пока есть следующее число, то выполянется функция
+            while(cur){
+                // Если следующее число равно элементу уже находящемуся в списке, то эти элементы удаляются.
+                //  Иначе цикл пробегает по следующему элементу
+                if(cur.val === val){
+                    prev.next = cur.next;
+                    cur = cur.next;
+                } else {
+                    prev = cur;
+                    cur = cur.next;
+                }
+            }
+            return p.next
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

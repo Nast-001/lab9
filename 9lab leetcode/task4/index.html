@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script >
+        // Перемнные
+    var swapPairs = function(head) {
+  var out = new ListNode(0);
+  var now = out;
+
+  out.next = head;
+ //Алгоритм выполняется только в том случае, если есть последующие 2 числа. 
+  while (now.next && now.next.next) {
+    now = swap(now, now.next, now.next.next);
+  }
+
+  return out.next;
+};
+// Функция меняет местами пару чисел между собой и переходит к следующей паре
+var swap = function (a, b, c) {
+  a.next = c;
+  b.next = c.next;
+  c.next = b;
+  return b;
+};
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

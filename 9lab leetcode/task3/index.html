@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script >
+    var reverseList = function(head) {
+        // Переменные изначально равные нулю для дальнейшего заполнения
+  var newHead = null;
+  var tmp = null;
+//   функция выполняется пока есть элемент в списке. Функция перебирает все элементы и добавляет их в обратном порядке
+  while (head) {
+    tmp = head.next;
+    head.next = newHead;
+    newHead = head;
+    head = tmp;
+  }
+  return newHead;
+};
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

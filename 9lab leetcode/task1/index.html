@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script >
+    var mergeTwoLists = function(l1, l2) {
+        // Переменные. head - новый список, который будет состоять из двух старых списков LisNode - узел, состоит из ссылки на след. элемент next и значения val
+    var head = new ListNode(0);
+    var now = head;
+    var p1 = l1;
+    var p2 = l2;
+    // Функция выполняется пока есть старый один любой список, чтобы с ним работать 
+    while (p1 || p2) {
+        //Условие проверяет в спике наименьшее, чтобы следующим добавить его в список
+      if (p1 === null || (p2 !== null && p2.val < p1.val)) {
+        now.next = p2;
+        p2 = p2.next;
+      } else {
+        now.next = p1;
+        p1 = p1.next;
+      }
+      now = now.next;
+    }
+    return head.next;
+  };
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
